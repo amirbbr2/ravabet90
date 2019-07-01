@@ -99,23 +99,23 @@ class Instabrute():
 			'UserAgent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
 			'x-instagram-ajax':'1',
 			'X-Requested-With': 'XMLHttpRequest',
-			'origin': 'https://www.instagram.com',
+			'origin': 'http://ravabet90.com,
 			'ContentType' : 'application/x-www-form-urlencoded',
 			'Connection': 'keep-alive',
 			'Accept': '*/*',
-			'Referer': 'https://www.instagram.com',
-			'authority': 'www.instagram.com',
-			'Host' : 'www.instagram.com',
+			'Referer': 'https://ravabet90.com',
+			'authority': 'www.ravabet90.com',
+			'Host' : 'www.ravabet90.com',
 			'Accept-Language' : 'en-US;q=0.6,en;q=0.4',
 			'Accept-Encoding' : 'gzip, deflate'
 		})
 
 		#Update token after enter to the site
-		r = sess.get('https://www.instagram.com/') 
+		r = sess.get('http://www.ravabet90.com/') 
 		sess.headers.update({'X-CSRFToken' : r.cookies.get_dict()['csrftoken']})
 
 		#Update token after login to the site 
-		r = sess.post('https://www.instagram.com/accounts/login/ajax/', data={'username':self.username, 'password':password}, allow_redirects=True)
+		r = sess.post('http://www.ravabet90.com/user/login?return=%2Fuser%2Faccount', data={'username':self.username, 'password':password}, allow_redirects=True)
 		sess.headers.update({'X-CSRFToken' : r.cookies.get_dict()['csrftoken']})
 		
 		#parse response
